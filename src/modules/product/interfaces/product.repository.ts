@@ -6,4 +6,5 @@ export interface IProductRepository {
   getByName(name: string): Promise<ProductEntity | undefined>;
   delete(id: number): Promise<ProductEntity | undefined>;
   getById(id: number): Promise<ProductEntity | undefined>;
+  // update(id: number, entity: ProductEntity): Promise<ProductEntity>;
 }

@@ -35,4 +35,14 @@ export class ProductRepository extends Postgres implements IProductRepository {
       id
     );
   }
+
+  // async update(id: number, entity: ProductEntity): Promise<ProductEntity | undefined> {
+  //   return await this.fetch(
+  //     "update products set name = $1, price = $2, count = $3 where id = $4",
+  //     entity.name,
+  //     entity.price,
+  //     entity.count,
+  //     id 
+  //   );
+  // }
 }

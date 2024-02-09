@@ -23,4 +23,6 @@ router.get("/:id", (req: Request, res: Response) => {
   productController.getById(req, res);
 });
 
+
+
 export { router };

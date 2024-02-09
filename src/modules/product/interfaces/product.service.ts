@@ -8,4 +8,8 @@ export interface IProductService {
   getByName(name: string): Promise<ResonseData<ProductEntity | undefined>>;
   delete(id: number): Promise<ResonseData<ProductEntity | undefined>>;
   getById(id: number): Promise<ResonseData<ProductEntity | undefined>>;
+  // update(
+  //   id: number,
+  //   entity: ProductEntity
+  // ): Promise<ResonseData<ProductEntity>>;
 }
