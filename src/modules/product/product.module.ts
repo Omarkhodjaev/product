@@ -19,4 +19,8 @@ router.delete("/:id", (req: Request, res: Response) => {
   productController.delete(req, res);
 });
 
+router.get("/:id", (req: Request, res: Response) => {
+  productController.getById(req, res);
+});
+
 export { router };

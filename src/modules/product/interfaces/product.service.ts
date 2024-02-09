@@ -7,4 +7,5 @@ export interface IProductService {
   create(dto: CreateProductDto): Promise<ResonseData<ProductEntity>>;
   getByName(name: string): Promise<ResonseData<ProductEntity | undefined>>;
   delete(id: number): Promise<ResonseData<ProductEntity | undefined>>;
+  getById(id: number): Promise<ResonseData<ProductEntity | undefined>>;
 }

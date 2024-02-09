@@ -28,4 +28,11 @@ export class ProductRepository extends Postgres implements IProductRepository {
       id
     );
   }
+
+  async getById(id: number): Promise<ProductEntity | undefined> {
+    return await this.fetch<ProductEntity | undefined>(
+      "select * from products where id = $1",
+      id
+    );
+  }
 }

@@ -46,9 +46,22 @@ export class ProductService implements IProductService {
     let resData: ResonseData<ProductEntity | undefined>;
 
     if (deletedProduct) {
-      resData = new ResonseData("success", 200, deletedProduct);
+      resData = new ResonseData("successfully deleted", 200, deletedProduct);
     } else {
       resData = new ResonseData("not found", 404);
+    }
+
+    return resData;
+  }
+
+  async getById(id: number): Promise<ResonseData<ProductEntity | undefined>> {
+    const product = await this.#productRepository.getById(id);
+
+    let resData: ResonseData<ProductEntity>;
+    if (product) {
+      resData = new ResonseData("Product found", 200, product);
+    } else {
+      resData = new ResonseData("Product not found", 404);
     }
 
     return resData;

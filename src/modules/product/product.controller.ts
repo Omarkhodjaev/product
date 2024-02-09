@@ -73,4 +73,19 @@ export class ProductController {
       );
     }
   }
+
+  async getById(req: Request, res: Response) {
+    try {
+      const id = Number(req.params.id);
+      const resData = await this.#productService.getById(id);
+      res.status(resData.statusCode).json(resData);
+    } catch (error: Error | any) {
+      const resData = new ResonseData(
+        error.message,
+        error.status || 500,
+        null,
+        error
+      );
+    }
+  }
 }

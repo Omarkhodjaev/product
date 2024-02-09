@@ -5,4 +5,5 @@ export interface IProductRepository {
   insert(entity: ProductEntity): Promise<ProductEntity>;
   getByName(name: string): Promise<ProductEntity | undefined>;
   delete(id: number): Promise<ProductEntity | undefined>;
+  getById(id: number): Promise<ProductEntity | undefined>;
 }
